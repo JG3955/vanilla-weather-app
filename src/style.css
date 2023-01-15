@@ -1,5 +1,5 @@
 body {
-  font-family: arial, sans-serif;
+  font-family: Google Sans, Roboto, arial, sans-serif;
 }
 
 h1 {
@@ -64,4 +64,5 @@ li:first-letter {
 }
 .weather-temperature .active:hover {
   text-decoration: none;
+  font-weight: bold;
 }
