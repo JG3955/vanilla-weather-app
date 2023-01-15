@@ -49,8 +49,21 @@ function displayTemperature(response) {
   );
 }
 
-let apiKey = "6f64ae7tded4b68oe3a98a8c06aff84b";
-let city = "New York";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&usnits=metric`;
+function search(city) {
+  let apiKey = "6f64ae7tded4b68oe3a98a8c06aff84b";
 
-axios.get(apiUrl).then(displayTemperature);
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&usnits=metric`;
+
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+search("New York)");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
